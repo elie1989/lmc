@@ -14,10 +14,15 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 
-from django.contrib import admin
-from django.urls import path, include
+from xml.etree.ElementInclude import include
+from django.urls import path
+from cmmapp import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('cmmapp.urls')),         
+    path('',  views.connexion), 
+    path('listepatient/',  views.listepatient),
+    path('ajoutpatient/',  views.ajoutpatient),
+    path('listeagent/',  views.listeagent), 
+    path('ajoutagent/',  views.ajoutagent), 
+    # path('/',  views.),         
 ]
